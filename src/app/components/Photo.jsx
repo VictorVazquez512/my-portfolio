@@ -14,11 +14,11 @@ function Photo() {
           transition: { duration: 0.4, ease: "easeIn" },
         }}
       >
-        <div className="w-[298px] h-[298px] xl:w-[498px] xl:h-[498px] mix-blend-lighten absolute">
+        <div className="w-[288px] h-[288px] lg:w-[458px] lg:h-[458px] absolute translate-x-[3.1%] translate-y-[3.1%] lg:translate-x-[2.6%] lg:translate-y-[2.6%]">
           <Image
             src="/assets/profile.jpg"
             alt="A person coding"
-            className="object-contain rounded-full"
+            className="object-contain rounded-full filter grayscale"
             priority
             quality={100}
             fill
@@ -27,7 +27,7 @@ function Photo() {
       </motion.div>
       {/* Circle */}
       <motion.svg
-        className="w-[305px] xl:w-[511px] h-[305px] xl:h-[511px]"
+        className="w-[305px] lg:w-[481px] h-[305px] lg:h-[481px]"
         fill="transparent"
         viewBox="0 0 506 506"
         xmlns="http://www.w3.org/2000/svg"

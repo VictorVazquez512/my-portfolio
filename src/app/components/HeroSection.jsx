@@ -5,14 +5,13 @@ import { FiDownload } from "react-icons/fi";
 // Components
 import Socials from "./Socials";
 import Photo from "./Photo";
-
 function HeroSection() {
   return (
-    <section className="h-full" id="hero">
-      <div className="container mx-auto h-full">
-        <div className="flex flex-col lg:flex-row items-center justify-between xl:pt-8 xl:pb-24">
+    <section className="h-full px-8" id="hero">
+      <div className="container mx-auto h-full ">
+        <div className="flex flex-col lg:flex-row items-center justify-between lg:pt-8 lg:pb-24">
           {/* Text */}
-          <div className="text-center xl:text-left order-2 xl:order-none">
+          <div className="text-center lg:text-left order-2 lg:order-none">
             <span className="text-xl">Software Engineer</span>
             <h1 className="h1 font-bold text-secondary mb-6">
               Hi, I'm <br />
@@ -23,7 +22,7 @@ function HeroSection() {
               building high-quality websites and applications.
             </p>
             {/* Btn and socials */}
-            <div className="flex flex-col xl:flex-row items-center gap-8">
+            <div className="flex flex-col lg:flex-row items-center gap-8">
               <Button
                 variant="outline"
                 size="lg"
@@ -45,7 +44,7 @@ function HeroSection() {
             </div>
           </div>
           {/* Photo */}
-          <div className="order-1 xl:order-none mb-8 xl:mb-0">
+          <div className="order-1 lg:order-none mb-8 xl:mb-0">
             <Photo />
           </div>
         </div>
