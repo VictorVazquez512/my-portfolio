@@ -1,6 +1,10 @@
 import React from "react";
 import { Button } from "@/components/ui/button";
-import FiDownload from "react-icons/fi";
+import { FiDownload } from "react-icons/fi";
+
+// Components
+import Socials from "./Socials";
+import Photo from "./Photo";
 
 function HeroSection() {
   return (
@@ -8,7 +12,7 @@ function HeroSection() {
       <div className="container mx-auto h-full">
         <div className="flex flex-col lg:flex-row items-center justify-between xl:pt-8 xl:pb-24">
           {/* Text */}
-          <div className="text-center xl:text-left">
+          <div className="text-center xl:text-left order-2 xl:order-none">
             <span className="text-xl">Software Engineer</span>
             <h1 className="h1 font-bold text-secondary mb-6">
               Hi, I'm <br />
@@ -19,16 +23,30 @@ function HeroSection() {
               building high-quality websites and applications.
             </p>
             {/* Btn and socials */}
-            <div>
-              <Button></Button>
+            <div className="flex flex-col xl:flex-row items-center gap-8">
+              <Button
+                variant="outline"
+                size="lg"
+                className="uppercase flex items-center gap-2 border border-blue 
+                text-blue text-base hover:bg-blue 
+                hover:text-primary hover:transition-all duration-500"
+              >
+                <span>Download CV</span>
+                <FiDownload className="text-xl" />
+              </Button>
+              <div className="mb-8 xl:mb-0">
+                <Socials
+                  containerStyles="flex gap-6"
+                  iconStyles="w-9 h-9 border border-blue rounded-full flex 
+                  justify-center items-center text-blue text-base hover:bg-blue 
+                  hover:text-primary hover:transition-all duration-500"
+                ></Socials>
+              </div>
             </div>
           </div>
           {/* Photo */}
-          <div>
-            <img
-              src="https://media.istockphoto.com/id/1075599562/photo/programmer-working-with-program-code.jpg?s=612x612&w=0&k=20&c=n3Vw5SMbMCWW1YGG6lnTfrwndNQ8B_R4Vw-BN7LkqpA="
-              alt="A person coding"
-            />
+          <div className="order-1 xl:order-none mb-8 xl:mb-0">
+            <Photo />
           </div>
         </div>
       </div>
