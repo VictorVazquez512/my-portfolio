@@ -1,15 +1,16 @@
 import React from "react";
 import { Button } from "@/components/ui/button";
 import { FiDownload } from "react-icons/fi";
+import Stats from "./Stats";
 
 // Components
 import Socials from "./Socials";
 import Photo from "./Photo";
 function HeroSection() {
   return (
-    <section className="h-full px-8" id="hero">
+    <section className="h-full" id="hero">
       <div className="container mx-auto h-full ">
-        <div className="flex flex-col lg:flex-row items-center justify-between lg:pt-8 lg:pb-24">
+        <div className="flex flex-col lg:flex-row items-center justify-between lg:pt-8 lg:pb-12">
           {/* Text */}
           <div className="text-center lg:text-left order-2 lg:order-none">
             <span className="text-xl">Software Engineer</span>
@@ -49,6 +50,7 @@ function HeroSection() {
           </div>
         </div>
       </div>
+      <Stats />
     </section>
   );
 }
