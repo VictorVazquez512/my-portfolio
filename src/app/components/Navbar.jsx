@@ -3,8 +3,8 @@ import DesktopNav from "./DesktopNav";
 
 function Navbar() {
   return (
-    <nav className="py-8 xl:py-12 text-secondary">
-      <div className="container mx-auto flex justify-between items-center">
+    <nav className="py-6 xl:py-8 text-secondary">
+      <div className="container mx-auto flex justify-between items-center w-[95%]">
         {/* Logo */}
         <h1 className="text-4xl font-semibold">
           Victor<span className="text-blue">.</span>

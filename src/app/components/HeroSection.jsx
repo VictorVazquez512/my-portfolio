@@ -9,8 +9,8 @@ import Photo from "./Photo";
 function HeroSection() {
   return (
     <section className="h-full" id="hero">
-      <div className="container mx-auto h-full ">
-        <div className="flex flex-col lg:flex-row items-center justify-between lg:pt-8 lg:pb-12">
+      <div className="container mx-auto h-full w-[95%]">
+        <div className="flex flex-col lg:flex-row items-center justify-between lg:pt-4 lg:pb-12">
           {/* Text */}
           <div className="text-center lg:text-left order-2 lg:order-none">
             <span className="text-xl">Software Engineer</span>
@@ -49,8 +49,8 @@ function HeroSection() {
             <Photo />
           </div>
         </div>
+        <Stats />
       </div>
-      <Stats />
     </section>
   );
 }

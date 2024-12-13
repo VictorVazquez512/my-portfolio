@@ -35,7 +35,8 @@ function Stats() {
                 <CountUp
                   end={stat.num}
                   duration={5}
-                  delay={0.5}
+                  enableScrollSpy={true}
+                  scrollSpyOnce={true}
                   className="text-4xl xl:text-6xl font-extrabold"
                 />
                 <p className="max-w-[150p] leading-snug text-secondary/80">
