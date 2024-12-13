@@ -1,5 +1,6 @@
 import React from "react";
 import DesktopNav from "./DesktopNav";
+import MobileNav from "./MobileNav";
 
 function Navbar() {
   return (
@@ -11,9 +12,14 @@ function Navbar() {
         </h1>
 
         {/* Desktop Nav */}
-        <DesktopNav />
+        <div className="hidden lg:flex items-center gap-8">
+          <DesktopNav />
+        </div>
 
         {/* Mobile Nav */}
+        <div className="lg:hidden">
+          <MobileNav />
+        </div>
       </div>
     </nav>
   );
