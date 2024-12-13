@@ -1,8 +1,14 @@
-import React from "react";
+"use client";
+
+import React, { useRef } from "react";
+import { motion, useScroll } from "framer-motion"
+import CircleIcon from "./CircleIcon";
 
 function Details({ position, company, time, address, work }) {
+  const ref = useRef(null);
   return (
-    <li className="my-8 first:mt-0 last:mb-0 w-[80%] mx-auto flex flex-col items-center justify-between">
+    <li ref={ref} className="my-8 first:mt-0 last:mb-0 w-[80%] mx-auto flex flex-col items-center justify-between">
+      <CircleIcon reference={ref} />
       <div>
         <h3 className="h3 capitalize">
           {position}&nbsp;
@@ -17,40 +23,35 @@ function Details({ position, company, time, address, work }) {
   );
 }
 
-function ExperienceSection() {
+function ExperienceSection({detailsList, title}) {
+
+  const ref = useRef(null);
+  const { scrollYProgress } = useScroll(
+    {
+      target: ref,
+      offset: ["start end", "center start"]
+    }
+  )
+
   return (
     <section className="h-full" id="experience">
-      <div className="container mx-auto h-full ">
+      <div className="container mx-auto h-full pt-32">
         <div className="lg:pt-8 lg:pb-12">
           <h2 className="h2 font-bold text-secondary-75 mb-6 w-full text-center">
-            Experience
+            { title }
           </h2>
-          <div className="w-[85%] mx-auto relative">
+          <div ref={ref} className="w-[85%] mx-auto relative">
             {/* Line */}
-            <div className="absolute left-8 top-0 w-[4px] h-full bg-secondary origin-top"></div>
+            <motion.div 
+              className="absolute left-9 top-0 w-[4px] h-full bg-secondary origin-top"
+              style={{ scaleY: scrollYProgress }} 
+            />
+              
             {/* Details */}
             <ul className="w-full flex flex-col items-start justify-between ml-4">
-              <Details
-                position="Software Engineer"
-                company="Google"
-                time="2022-Present"
-                address="Mountain View, CA"
-                work="Worked on a team responsible for developing new features for Google's search engine, including improving the accuracy and relevance of search results and developing new tools for data analysis and visualization."
-              />
-              <Details
-                position="Software Engineer"
-                company="Google"
-                time="2022-Present"
-                address="Mountain View, CA"
-                work="Worked on a team responsible for developing new features for Google's search engine, including improving the accuracy and relevance of search results and developing new tools for data analysis and visualization."
-              />
-              <Details
-                position="Software Engineer"
-                company="Google"
-                time="2022-Present"
-                address="Mountain View, CA"
-                work="Worked on a team responsible for developing new features for Google's search engine, including improving the accuracy and relevance of search results and developing new tools for data analysis and visualization."
-              />
+              {detailsList.map((details, index) => (
+                <Details key={index} {...details} />
+              ))}
             </ul>
           </div>
         </div>
