@@ -50,11 +50,11 @@ export default function Home() {
 
   return (
     <>
-      <header>
+      <header className="min-h-screen">
         <Navbar />
+        <HeroSection />
       </header>
       <main>
-        <HeroSection />
         <SkillsProjectsSection />
         <ExperienceSection detailsList={jobDetails} title="Experience" />
         <ExperienceSection detailsList={educationDetails} title="Education" />

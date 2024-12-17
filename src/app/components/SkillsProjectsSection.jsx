@@ -1,6 +1,7 @@
 'use client';
 import React from "react";
 import ProjectCard from "./ProjectCard";
+import ProjectTag from "./ProjectTag";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 
 const projectsList = [
@@ -30,34 +31,48 @@ const projectsList = [
     title: "React Firebase Template",
     description: "Authentication and CRUD operations",
     image: "/assets/personComputer.jpg",
-    tags: [{icon: FaGithub, name:"React"}, {icon: FaLinkedin, name:"Firebase"}],
+    tags: [{icon: FaLinkedin, name:"Firebase"}],
   },
 ]
 
+
 function SkillsProjectsSection() {
 
-  const [tag, setTag] = React.useState("All");
+  const [tags, setTags] = React.useState([]);
 
-  const handleTagClick = (newTag) => {
-    setTag(newTag);
+  const handleTagClick = async (newTag) => {
+    
+    if (tags.includes(newTag)) {
+      setTags((prevList) => prevList.filter((tag) => tag != newTag));
+    } else {
+      await setTags((prevList) => [...prevList, newTag]);
+    }
+
   };
+
+  const filteredProjects = projectsList.filter((project) => {
+    if (tags.length === 0) return true;
+    return project.tags.some((projectTag) => 
+      tags.some((selectedTag) => selectedTag === projectTag.name)
+    );
+  });
 
   return (
     <section className="h-full" id="skills-projects">
-      <div className="container mx-auto pt-32 h-full w-[90%]">
+      <div className="container mx-auto pt-10 h-full w-[90%]">
         <h2 className="h2 font-bold text-secondary-75 mb-10 w-full text-center">Projects & Skills</h2>
         {/* Skils */}
         <div className="text-secondary flex flex-row justify-center text-md items-center gap-2 py-6"> 
-          <button className="flex justify-center items-center gap-2 rounded-full border-2 border-blue px-4 py-1  cursor-pointer">
-            <FaLinkedin /> All
-          </button>
-          <button className="flex justify-center items-center gap-2 rounded-full border-2 border-emphasis hover:border-secondary px-4 py-1 cursor-pointer">
-            <FaGithub /> React
-          </button>
+          <ProjectTag 
+            name="React"
+            icon={FaGithub} 
+            onClick={handleTagClick} 
+            isSelected={tags.includes("React")}
+          />
         </div>
         {/* Projects */}
         <div className="grid md:grid-cols-3 gap-8 md:gap-12">
-          {projectsList.map((project) => (
+          {filteredProjects.map((project) => (
             <ProjectCard
               key={project.id}
               title={project.title}

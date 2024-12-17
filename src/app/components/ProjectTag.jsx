@@ -1,6 +1,12 @@
-import React from 'react'
+'use client';
+import { useEffect } from 'react'
 
-function ProjectTag({ name, icon, onClick, isSelected }) {
+function ProjectTag({ name, icon: Icon, onClick, isSelected }) {
+
+    useEffect(() => {
+      console.log('icon', icon);
+    }, []);
+
     const buttonStyles = isSelected 
     ? 'border-blue px-4 py-1  cursor-pointer' 
     : 'border-emphasis hover:border-secondary px-4 py-1 cursor-pointer';
@@ -10,7 +16,7 @@ function ProjectTag({ name, icon, onClick, isSelected }) {
         className={`${buttonStyles} flex justify-center items-center gap-2 rounded-full border-2`}
         onClick={() => onClick(name)}
     >
-        <icon /> { name }
+        <Icon /> { name }
     </button>
   )
 }
