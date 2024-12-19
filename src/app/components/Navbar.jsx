@@ -27,7 +27,7 @@ function Navbar() {
   ];
 
   return (
-    <nav className="py-6 xl:py-8 text-secondary">
+    <nav className="py-8 xl:py-8 text-secondary">
       <div className="container mx-auto flex justify-between items-center w-[95%]">
         {/* Logo */}
         <h1 className="text-4xl font-semibold">
