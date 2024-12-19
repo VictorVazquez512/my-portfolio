@@ -2,30 +2,7 @@ import React from "react";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { CiMenuFries } from "react-icons/ci";
 
-const links = [
-  {
-    name: "home",
-    path: "/",
-  },
-  {
-    name: "projects",
-    path: "#projects",
-  },
-  {
-    name: "experience",
-    path: "#experience",
-  },
-  {
-    name: "education",
-    path: "#education",
-  },
-  {
-    name: "contact",
-    path: "#contact",
-  },
-];
-
-function MobileNav() {
+function MobileNav({ links }) {
   return (
     <Sheet>
       <SheetTrigger>
@@ -33,7 +10,27 @@ function MobileNav() {
       </SheetTrigger>
       <SheetContent className="flex flex-col">
         {/* Logo */}
-        <div>Logo</div>
+        <div className="mt-16 mb-12 text-center">
+          <a href="/">
+            <h1 className="text-4xl font-semibold">
+              Victor<span className="text-blue">.</span>
+            </h1>
+          </a>
+        </div>
+        {/* Links */}
+        <div className="flex flex-col justify-center items-center gap-8">
+          {links.map((link, index) => {
+            return (
+              <a
+                key={index}
+                href={link.path}
+                className="hover:text-blue active:text-emphasis"
+              >
+                {link.name}
+              </a>
+            );
+          })}
+        </div>
       </SheetContent>
     </Sheet>
   );

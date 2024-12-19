@@ -21,6 +21,7 @@ function Photo() {
             className="object-contain rounded-full filter grayscale"
             priority
             quality={100}
+            sizes="(max-width: 1024px) 288px, 458px"
             fill
           />
         </div>
