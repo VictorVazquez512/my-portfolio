@@ -3,10 +3,6 @@ import { useEffect } from 'react'
 
 function ProjectTag({ name, icon: Icon, onClick, isSelected }) {
 
-    useEffect(() => {
-      console.log('icon', icon);
-    }, []);
-
     const buttonStyles = isSelected 
     ? 'border-blue px-4 py-1  cursor-pointer' 
     : 'border-emphasis hover:border-secondary px-4 py-1 cursor-pointer';
