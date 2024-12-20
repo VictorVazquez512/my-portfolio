@@ -6,34 +6,58 @@ import { FaGithub, FaLinkedin, FaJs, FaPython, FaJava, FaNodeJs, FaLinux, FaVuej
 import { DiMongodb, DiPostgresql } from "react-icons/di";
 import { MdDocumentScanner } from "react-icons/md";
 
+const js = {icon: FaJs, name:"JS"};
+const ts = {icon: FaJs, name:"JS"};
+const python = {icon: FaGithub, name:"JS"};
+const java = {icon: FaGithub, name:"JS"};
+const nestJS = {icon: FaGithub, name:"JS"};
+const nodeJS = {icon: FaGithub, name:"JS"};
+const django = {icon: FaGithub, name:"JS"};
+const postgreSQL = {icon: FaGithub, name:"JS"};
+const mongoDb = {icon: FaGithub, name:"JS"};
+const linux = {icon: FaGithub, name:"JS"};
+const vueJs = {icon: FaGithub, name:"JS"};
+const react = {icon: FaGithub, name:"JS"};
+const postman = {icon: FaJs, name:"JS"};
+const playwright = {icon: FaJs, name:"JS"};
+
 const projectsList = [
   {
     id: 1,
-    title: "React Firebase Template",
+    title: "Agroeasy",
     description: "Authentication and CRUD operations",
     image: "/assets/personComputer.jpg",
-    tags: [{icon: FaGithub, name:"React"}, {icon: FaLinkedin, name:"Firebase"}],
+    tags: [
+      {icon: FaGithub, name:"JS"},
+      {icon: FaLinkedin, name:"TS"},
+      {icon: FaLinkedin, name:"NestJS"},
+      {icon: FaLinkedin, name:"NodeJS"},
+      {icon: FaLinkedin, name:"PostgreSQL"},
+      {icon: FaLinkedin, name:"MongoDB"},
+      {icon: FaLinkedin, name:""},
+      {icon: FaLinkedin, name:""},
+      {icon: FaLinkedin, name:""},
+    ],
   },
   {
     id: 2,
-    title: "React Firebase Template",
+    title: "Livestock System",
     description: "Authentication and CRUD operations",
     image: "/assets/personComputer.jpg",
-    tags: [{icon: FaGithub, name:"React"}, {icon: FaLinkedin, name:"Firebase"}],
+    tags: [
+      {icon: FaGithub, name:"React"}, 
+      {icon: FaLinkedin, name:"Firebase"}
+    ],
   },
   {
     id: 3,
-    title: "React Firebase Template",
+    title: "Internal Freight Management",
     description: "Authentication and CRUD operations",
     image: "/assets/personComputer.jpg",
-    tags: [{icon: FaGithub, name:"React"}, {icon: FaLinkedin, name:"Firebase"}],
-  },
-  {
-    id: 4,
-    title: "React Firebase Template",
-    description: "Authentication and CRUD operations",
-    image: "/assets/personComputer.jpg",
-    tags: [{icon: FaLinkedin, name:"Firebase"}],
+    tags: [
+      {icon: FaGithub, name:"React"}, 
+      {icon: FaLinkedin, name:"Firebase"}
+    ],
   },
 ]
 
@@ -67,91 +91,91 @@ function SkillsProjectsSection() {
         <div className="text-secondary flex flex-row flex-wrap justify-center text-md items-center gap-2 py-6"> 
           <ProjectTag 
             name="JS"
-            icon={FaGithub} 
+            icon={FaJs} 
             onClick={handleTagClick} 
-            isSelected={tags.includes("React")}
+            isSelected={tags.includes("JS")}
           />
           <ProjectTag 
             name="TS"
-            icon={FaGithub} 
+            icon={FaJs} 
             onClick={handleTagClick} 
-            isSelected={tags.includes("React")}
+            isSelected={tags.includes("TS")}
           />
           <ProjectTag 
             name="Python"
-            icon={FaGithub} 
+            icon={FaPython} 
             onClick={handleTagClick} 
-            isSelected={tags.includes("React")}
+            isSelected={tags.includes("Python")}
           />
           <ProjectTag 
             name="Java"
-            icon={FaGithub} 
+            icon={FaJava} 
             onClick={handleTagClick} 
-            isSelected={tags.includes("React")}
+            isSelected={tags.includes("Java")}
           />
           <ProjectTag 
             name="NestJS"
-            icon={FaGithub} 
+            icon={FaNodeJs} 
             onClick={handleTagClick} 
-            isSelected={tags.includes("React")}
+            isSelected={tags.includes("NestJS")}
           />
           <ProjectTag 
             name="NodeJS"
-            icon={FaGithub} 
+            icon={FaNodeJs} 
             onClick={handleTagClick} 
-            isSelected={tags.includes("React")}
+            isSelected={tags.includes("NodeJS")}
           />
           <ProjectTag 
             name="Django"
-            icon={FaGithub} 
+            icon={FaPython} 
             onClick={handleTagClick} 
-            isSelected={tags.includes("React")}
+            isSelected={tags.includes("Django")}
           />
           <ProjectTag 
             name="PostgreSQL"
-            icon={FaGithub} 
+            icon={DiPostgresql} 
             onClick={handleTagClick} 
-            isSelected={tags.includes("React")}
+            isSelected={tags.includes("PostgreSQL")}
           />
           <ProjectTag 
             name="MongoDB"
-            icon={FaGithub} 
+            icon={DiMongodb} 
             onClick={handleTagClick} 
-            isSelected={tags.includes("React")}
+            isSelected={tags.includes("MongoDB")}
           />
           <ProjectTag 
             name="Linux"
-            icon={FaGithub} 
+            icon={FaLinux} 
             onClick={handleTagClick} 
-            isSelected={tags.includes("React")}
+            isSelected={tags.includes("Linux")}
           />
           <ProjectTag 
             name="VueJS"
-            icon={FaGithub} 
+            icon={FaVuejs} 
             onClick={handleTagClick} 
-            isSelected={tags.includes("React")}
+            isSelected={tags.includes("VueJS")}
           />
           <ProjectTag 
             name="React"
-            icon={FaGithub} 
+            icon={FaReact} 
             onClick={handleTagClick} 
             isSelected={tags.includes("React")}
           />
           <ProjectTag 
             name="Postman"
-            icon={FaGithub} 
+            icon={FaJs} 
             onClick={handleTagClick} 
-            isSelected={tags.includes("React")}
+            isSelected={tags.includes("Postman")}
           />
           <ProjectTag 
             name="Playwright"
-            icon={FaGithub} 
+            icon={FaJs} 
             onClick={handleTagClick} 
-            isSelected={tags.includes("React")}
+            isSelected={tags.includes("Playwright")}
           />
         </div>
         {/* Projects */}
-        <div className="grid md:grid-cols-3 gap-8 md:gap-12">
+        <div className="grid md:grid-cols-3 gap-8 md:gap-12 mt-4">
           {filteredProjects.map((project) => (
             <ProjectCard
               key={project.id}
