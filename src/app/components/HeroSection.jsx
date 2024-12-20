@@ -45,7 +45,7 @@ function HeroSection() {
             </div>
           </div>
           {/* Photo */}
-          <div className="order-1 lg:order-none mb-8 xl:mb-0">
+          <div className="relative order-1 lg:order-none mb-8 xl:mb-0">
             <Photo />
           </div>
         </div>
