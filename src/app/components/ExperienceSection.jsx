@@ -26,7 +26,7 @@ function Details({ position, company, time, address, work }) {
   );
 }
 
-function ExperienceSection({ detailsList, title }) {
+function ExperienceSection({ detailsList, title, id }) {
   const ref = useRef(null);
   const { scrollYProgress } = useScroll({
     target: ref,
@@ -34,16 +34,16 @@ function ExperienceSection({ detailsList, title }) {
   });
 
   return (
-    <section className="h-full" id="experience">
-      <div className="container mx-auto h-full pt-32">
-        <div className="lg:pt-8 lg:pb-12">
+    <section className="h-full mb-10 lg:mb-24 pt-10" id={id}>
+      <div className="container mx-auto h-full">
+        <div className="">
           <h2 className="h2 font-bold text-secondary-75 mb-10 w-full text-center">
             {title}
           </h2>
           <div ref={ref} className="w-[85%] mx-auto relative">
             {/* Line */}
             <motion.div
-              className="absolute left-9 top-0 w-[4px] h-full bg-secondary origin-top"
+              className="absolute invisible lg:visible left-9 top-0 w-[4px] h-full bg-secondary origin-top"
               style={{ scaleY: scrollYProgress }}
             />
 

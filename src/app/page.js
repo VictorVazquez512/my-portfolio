@@ -55,8 +55,16 @@ export default function Home() {
       </header>
       <main>
         <SkillsProjectsSection />
-        <ExperienceSection detailsList={jobDetails} title="Experience" />
-        <ExperienceSection detailsList={educationDetails} title="Education" />
+        <ExperienceSection
+          detailsList={jobDetails}
+          id="experience"
+          title="Experience"
+        />
+        <ExperienceSection
+          detailsList={educationDetails}
+          id="education"
+          title="Education"
+        />
         <ContactMeSection />
       </main>
     </>

@@ -46,7 +46,7 @@ const sheetVariants = cva(
 );
 
 const SheetContent = React.forwardRef(
-  ({ side = "right", className, children, ...props }, ref) => (
+  ({ side = "right", className, children, onToggleTOC, ...props }, ref) => (
     <SheetPortal>
       <SheetOverlay />
       <SheetPrimitive.Content
@@ -55,7 +55,10 @@ const SheetContent = React.forwardRef(
         {...props}
       >
         {children}
-        <SheetPrimitive.Close className="absolute right-4 top-4 rounded-sm opacity-85 hover:text-blue active:text-emphasis transition-opacity disabled:pointer-events-none data-[state=open]:bg-slate-100">
+        <SheetPrimitive.Close
+          onClick={() => onToggleTOC()}
+          className="absolute right-4 top-4 rounded-sm opacity-85 hover:text-blue active:text-emphasis transition-opacity disabled:pointer-events-none data-[state=open]:bg-slate-100"
+        >
           <X className="h-6 w-6" />
           <span className="sr-only">Close</span>
         </SheetPrimitive.Close>

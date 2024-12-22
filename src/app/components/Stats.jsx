@@ -4,28 +4,27 @@ import CountUp from "react-countup";
 
 const stats = [
   {
-    num: 12,
+    num: 3,
     text: "Years of Experience",
+    showPlus: true,
   },
   {
-    num: 12,
+    num: 4,
     text: "Projects Completed",
+    showPlus: true,
   },
   {
-    num: 12,
+    num: 22,
     text: "Technologies",
-  },
-  {
-    num: 12,
-    text: "Code Commits",
+    showPlus: false,
   },
 ];
 
 function Stats() {
   return (
     <section className="pt-4 pb-12 lg:pt-0 xl:pb-0">
-      <div className="container mx-auto">
-        <div className="flex flex-wrap gap-6 max-w-[80vw] mx-auto xl:max-w-none">
+      <div className="flex items-center justify-between container mx-auto">
+        <div className="flex flex-wrap gap-4 xl:gap-36 max-w-[80vw] mx-auto xl:max-w-none">
           {stats.map((stat, index) => {
             return (
               <div
@@ -37,6 +36,7 @@ function Stats() {
                   duration={5}
                   enableScrollSpy={true}
                   scrollSpyOnce={true}
+                  suffix={stat.showPlus ? "+" : ""}
                   className="text-4xl xl:text-6xl font-extrabold"
                 />
                 <p className="max-w-[150p] leading-snug text-secondary/80">

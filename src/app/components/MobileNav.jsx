@@ -1,14 +1,33 @@
-import React from "react";
-import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
+"use client";
+
+import { useState } from "react";
+import {
+  Sheet,
+  SheetContent,
+  SheetTrigger,
+  SheetTitle,
+} from "@/components/ui/sheet";
 import { CiMenuFries } from "react-icons/ci";
 
 function MobileNav({ links }) {
+  const [isTOCOpen, setIsTOCOpen] = useState(false);
+
   return (
-    <Sheet>
-      <SheetTrigger>
+    <Sheet open={isTOCOpen}>
+      <SheetTitle className="hidden">Mobile Menu</SheetTitle>
+      <SheetTrigger
+        onClick={(e) => {
+          if (isTOCOpen) setIsTOCOpen(false);
+          else setIsTOCOpen(true);
+        }}
+      >
         <CiMenuFries className="text-[32px] text-secondary" />
       </SheetTrigger>
-      <SheetContent className="flex flex-col">
+      <SheetContent
+        onCloseAutoFocus={(event) => event.preventDefault()}
+        className="flex flex-col"
+        onToggleTOC={() => setIsTOCOpen(false)}
+      >
         {/* Logo */}
         <div className="mt-16 mb-12 text-center">
           <a href="/">
@@ -25,6 +44,9 @@ function MobileNav({ links }) {
                 key={index}
                 href={link.path}
                 className="hover:text-blue active:text-emphasis"
+                onClick={(e) => {
+                  setIsTOCOpen(false);
+                }}
               >
                 {link.name}
               </a>

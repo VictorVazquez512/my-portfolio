@@ -8,9 +8,9 @@ import Socials from "./Socials";
 import Photo from "./Photo";
 function HeroSection() {
   return (
-    <section className="h-full" id="hero">
+    <section className="h-full mb-10 lg:mb-24" id="hero">
       <div className="container mt-8 mx-auto h-full w-[95%]">
-        <div className="flex flex-col lg:flex-row items-center justify-between lg:pt-4 lg:pb-12 lg:mb-6">
+        <div className="flex flex-col lg:flex-row items-center justify-between lg:pt-4 lg:pb-6">
           {/* Text */}
           <div className="text-center lg:text-left order-2 lg:order-none">
             <span className="text-xl">Software Engineer</span>
@@ -18,9 +18,11 @@ function HeroSection() {
               Hi, I'm <br />
               <span className="text-blue">Victor Vazquez</span>
             </h1>
-            <p className="max-w-[500px] mb-9 text-paragraph">
-              I'm a software engineer based in Miami, FL. I specialize in
-              building high-quality websites and applications.
+            <p className="max-w-[650px] mb-9 text-paragraph">
+              I'm a Software Engineer based in Hermosillo, Sonora, Mexico with
+              over 3 years of experience building robust and efficient web
+              applications. Skilled in technologies like NestJS, Django, VueJS,
+              and React.
             </p>
             {/* Btn and socials */}
             <div className="flex flex-col lg:flex-row items-center gap-8">
