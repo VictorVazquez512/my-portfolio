@@ -11,7 +11,13 @@ function Socials({ containerStyles, iconStyles }) {
     <div className={containerStyles}>
       {socialsList.map((social, index) => {
         return (
-          <Link href={social.path} key={index} className={iconStyles}>
+          <Link
+            target="_blank"
+            rel="noopener noreferrer"
+            href={social.path}
+            key={index}
+            className={iconStyles}
+          >
             <social.icon />
           </Link>
         );

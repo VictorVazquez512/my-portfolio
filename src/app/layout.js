@@ -17,7 +17,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={jetbrains_Mono.variable}>
-        <Toaster />
+        <Toaster richColors={true} />
         {children}
       </body>
     </html>

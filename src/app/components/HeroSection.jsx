@@ -26,17 +26,17 @@ function HeroSection() {
             </p>
             {/* Btn and socials */}
             <div className="flex flex-col lg:flex-row items-center gap-8">
-              <Button
-                variant="outline"
-                size="lg"
-                className="uppercase flex items-center gap-2 border border-blue 
-                text-blue text-base hover:bg-blue 
-                hover:text-primary hover:transition-all duration-500"
+              <a
                 href="/assets/CV-VictorVazquez.pdf"
+                rel="noopener noreferrer"
+                download="CV-VictorVazquez.pdf"
+                className="uppercase flex items-center gap-2 border border-blue text-blue text-base 
+                          hover:bg-blue hover:text-primary hover:transition-all duration-500 
+                          px-4 py-2 rounded-lg"
               >
                 <span>Download CV</span>
                 <FiDownload className="text-xl" />
-              </Button>
+              </a>
               <div className="mb-8 xl:mb-0">
                 <Socials
                   containerStyles="flex gap-6"

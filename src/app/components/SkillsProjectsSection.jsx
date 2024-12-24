@@ -49,6 +49,7 @@ const projectsList = [
       postman,
       playwright,
     ],
+    livePath: "https://www.agroeasy.com.mx",
   },
   {
     id: 2,
@@ -73,6 +74,8 @@ const projectsList = [
       "A personal portfolio website showcasing my expertise as software engineer, developed using modern technologies like Tailwind CSS, NextJS, and ShadCN to create a professional and responsive online presence.",
     image: "/assets/myPortfolio.png",
     tags: [js, react],
+    repositoryPath: "https://github.com/VictorVazquez512/my-portfolio",
+    livePath: "/",
   },
 ];
 
@@ -196,6 +199,10 @@ function SkillsProjectsSection() {
               description={project.description}
               imgPath={project.image}
               tags={project.tags}
+              repositoryPath={
+                project.repositoryPath ? project.repositoryPath : undefined
+              }
+              livePath={project.livePath ? project.livePath : undefined}
             />
           ))}
         </div>

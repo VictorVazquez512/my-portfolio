@@ -1,6 +1,14 @@
-import { useState } from "react";
+import { FaGithub } from "react-icons/fa";
+import { RiCodeView } from "react-icons/ri";
 
-function ProjectCard({ imgPath, title, description, tags }) {
+function ProjectCard({
+  imgPath,
+  title,
+  description,
+  tags,
+  repositoryPath,
+  livePath,
+}) {
   return (
     <div>
       {/* Image */}
@@ -16,6 +24,7 @@ function ProjectCard({ imgPath, title, description, tags }) {
       <div className="text-secondary rounded-b-xl bg-gray-100 py-6 px-4">
         <h3 className="text-xl font-semibold mb-2"> {title} </h3>
         <p className="text-paragraph"> {description} </p>
+        {/* Tags */}
         <div className="flex flex-row flex-wrap gap-2 mt-4">
           {tags.map((tag) => (
             <span
@@ -26,6 +35,35 @@ function ProjectCard({ imgPath, title, description, tags }) {
               <tag.icon />{" "}
             </span>
           ))}
+        </div>
+        {/* Buttons */}
+        <div className="mt-6 flex flex-wrap gap-4">
+          {repositoryPath && (
+            <a
+              href={repositoryPath}
+              target="_blank"
+              rel="noopener noreferrer"
+              className=" flex items-center gap-2 border border-blue text-blue text-base 
+                          hover:bg-blue hover:text-primary hover:transition-all duration-500 
+                          px-4 py-2 rounded-lg"
+            >
+              <FaGithub />
+              Repository
+            </a>
+          )}
+          {livePath && (
+            <a
+              href={livePath}
+              target="_blank"
+              rel="noopener noreferrer"
+              className=" flex items-center gap-2 border border-blue text-blue text-base 
+                          hover:bg-blue hover:text-primary hover:transition-all duration-500 
+                          px-4 py-2 rounded-lg"
+            >
+              <RiCodeView />
+              Live Demo
+            </a>
+          )}
         </div>
       </div>
     </div>

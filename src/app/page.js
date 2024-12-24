@@ -68,7 +68,7 @@ export default function Home() {
 
   return (
     <>
-      <header className="min-h-screen">
+      <header className="min-h-fit">
         <Navbar />
         <HeroSection />
       </header>

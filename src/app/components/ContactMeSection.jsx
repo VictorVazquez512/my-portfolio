@@ -1,5 +1,5 @@
 "use client";
-import { useState } from "react";
+import { useState, useRef } from "react";
 import Socials from "./Socials";
 import { Button } from "@/components/ui/button";
 import { toast } from "sonner";
@@ -7,6 +7,7 @@ import Spinner from "./Spinner";
 
 function ContactMeSection() {
   const [submittingEmail, setSubmittingEmail] = useState(false);
+  const formRef = useRef(null);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -33,6 +34,10 @@ function ContactMeSection() {
     if (response.status === 200) {
       toast.success("Email sent successfully! I will get back to you soon.");
       setSubmittingEmail(false);
+
+      if (formRef.current) {
+        formRef.current.reset();
+      }
     } else {
       toast.error(
         "An error occurred while sending the email. Please try again."
@@ -66,7 +71,11 @@ function ContactMeSection() {
         </div>
         {/* Form */}
         <div className="flex flex-col w-full lg:w-[50%] lg:my-12 lg:py-6 px-6 gap-4">
-          <form className="flex flex-col gap-4" onSubmit={handleSubmit}>
+          <form
+            ref={formRef}
+            className="flex flex-col gap-4"
+            onSubmit={handleSubmit}
+          >
             {/* email field */}
             <label
               htmlFor="email"
