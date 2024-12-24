@@ -32,6 +32,7 @@ function HeroSection() {
                 className="uppercase flex items-center gap-2 border border-blue 
                 text-blue text-base hover:bg-blue 
                 hover:text-primary hover:transition-all duration-500"
+                href="/assets/CV-VictorVazquez.pdf"
               >
                 <span>Download CV</span>
                 <FiDownload className="text-xl" />

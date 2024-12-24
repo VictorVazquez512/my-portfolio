@@ -1,3 +1,6 @@
+"use client";
+
+import React, { useState, useEffect } from "react";
 import Navbar from "./components/Navbar";
 import HeroSection from "./components/HeroSection";
 import SkillsProjectsSection from "./components/SkillsProjectsSection";
@@ -46,6 +49,22 @@ export default function Home() {
       work: "Graduated with a technical degree in Computer Programming, gaining foundational skills in HTML, CSS, SQL, MySQL, and Java. Studied relevant courses in Databases, Programming Languages, and Introduction to Algorithms, building a strong technical base for higher education in software development.",
     },
   ];
+
+  const [isHydrated, setIsHydrated] = useState(false);
+
+  useEffect(() => {
+    setIsHydrated(true);
+  }, []);
+
+  if (!isHydrated) {
+    return (
+      <div className="h-screen flex items-center justify-center">
+        <p className="text-2xl font-bold">
+          Loading<span className="text-blue">...</span>
+        </p>
+      </div>
+    );
+  }
 
   return (
     <>

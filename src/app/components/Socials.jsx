@@ -2,8 +2,8 @@ import Link from "next/link";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 
 const socialsList = [
-  { icon: FaGithub, path: "" },
-  { icon: FaLinkedin, path: "" },
+  { icon: FaGithub, path: "https://github.com/VictorVazquez512" },
+  { icon: FaLinkedin, path: "http://www.linkedin.com/in/victorvar" },
 ];
 
 function Socials({ containerStyles, iconStyles }) {

@@ -9,7 +9,7 @@ function Details({ position, company, time, address, work }) {
   return (
     <li
       ref={ref}
-      className="my-8 first:mt-2 last:mb-0 w-[75%] mx-auto flex flex-col items-center justify-between"
+      className="my-8 first:mt-2 last:mb-0 w-full lg:w-[75%] mx-auto flex flex-col items-center justify-between"
     >
       <CircleIcon reference={ref} />
       <div>
@@ -40,7 +40,7 @@ function ExperienceSection({ detailsList, title, id }) {
           <h2 className="h2 font-bold text-secondary-75 mb-10 w-full text-center">
             {title}
           </h2>
-          <div ref={ref} className="w-[85%] mx-auto relative">
+          <div ref={ref} className="w-[95%] lg:w-[85%] mx-auto relative">
             {/* Line */}
             <motion.div
               className="absolute invisible lg:visible left-9 top-0 w-[4px] h-full bg-secondary origin-top"
@@ -48,7 +48,7 @@ function ExperienceSection({ detailsList, title, id }) {
             />
 
             {/* Details */}
-            <ul className="w-full flex flex-col items-start justify-between ml-4">
+            <ul className="w-full flex flex-col items-start justify-between lg:ml-4">
               {detailsList.map((details, index) => (
                 <Details key={index} {...details} />
               ))}

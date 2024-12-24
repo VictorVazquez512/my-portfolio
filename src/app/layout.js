@@ -1,5 +1,6 @@
 import "./globals.css";
 import { JetBrains_Mono } from "next/font/google";
+import { Toaster } from "sonner";
 
 const jetbrains_Mono = JetBrains_Mono({
   subsets: ["latin"],
@@ -15,7 +16,10 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={jetbrains_Mono.variable}>{children}</body>
+      <body className={jetbrains_Mono.variable}>
+        <Toaster />
+        {children}
+      </body>
     </html>
   );
 }
