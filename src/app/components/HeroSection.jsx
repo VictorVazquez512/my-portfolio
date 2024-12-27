@@ -21,7 +21,7 @@ function HeroSection() {
             <p className="max-w-[650px] mb-9 text-paragraph">
               I'm a Software Engineer based in Hermosillo, Sonora, Mexico with
               over 3 years of experience building robust and efficient web
-              applications. Skilled in technologies like NestJS, Django, VueJS,
+              applications. Skilled in technologies like NodeJS, Django, VueJS,
               and React.
             </p>
             {/* Btn and socials */}
